@@ -548,14 +548,6 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
-.row .col-lg-4 .card.col-md-4.col-lg-12 {
-	background-color: green;
-}
-.navbar-nav.mr-auto .nav-item .nav-link {
-	color: red;
-}
-
-
 
 @media (min-width: 576px) {
   .container {
