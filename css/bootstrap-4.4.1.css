@@ -8531,6 +8531,12 @@ button.bg-dark:focus {
 .mx-auto {
   margin-left: auto !important;
 }
+.carousel-inner .carousel-item .d-block.mx-auto {
+	width: 100%;
+	height: 620px;
+	-o-object-fit: cover;
+}
+
 
 @media (min-width: 576px) {
   .m-sm-0 {
