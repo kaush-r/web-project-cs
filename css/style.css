@@ -19,23 +19,23 @@ html {
 	border-radius: 14px;
 }
 .form-container {
-  width: 80%;
+  width: 100%;
   max-width: 600px;
   padding: 20px;
   background: #EEEEEE;
   color: black;
   box-shadow: 0 0 20px rgba(0,0,0,0.1);
   border-radius: 8px;
+  margin: 20px auto;
 }
 .content {
-	padding: 70px;
+	margin-left: auto;
     text-align: center;
     }
 .parent {
   display: flex;
   justify-content: center; /* horizontal */
   align-items: center;     /* vertical */
-}.container-fluid .container .navbar.navbar-expand-lg.navbar-light.fixed-top {
 }
 .container-fluid .container .navbar.navbar-expand-lg.navbar-light.fixed-top {
 	background-color: #EEEEEE;
