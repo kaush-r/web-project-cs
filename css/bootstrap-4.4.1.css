@@ -8532,9 +8532,9 @@ button.bg-dark:focus {
   margin-left: auto !important;
 }
 .carousel-inner .carousel-item .d-block.mx-auto {
-	width: 100%;
-	height: 620px;
+	width: 100vw;
 	-o-object-fit: cover;
+	height: 100vh;
 }
 
 

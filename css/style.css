@@ -3,3 +3,40 @@ body {
 .container-fluid {
 	background-color: #EEEEEE;
 }
+html {
+  scroll-behavior: smooth;
+}
+#contact h1 {
+	text-align: center;
+	/* [disabled]font-family: arial; */
+}
+#submit {
+	background-color: green;
+	border-radius: 14px;
+}
+#clear {
+	background-color: #b81111;
+	border-radius: 14px;
+}
+.form-container {
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
+  background: #EEEEEE;
+  color: black;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+.content {
+	padding: 70px;
+    text-align: center;
+    }
+.parent {
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+}.container-fluid .container .navbar.navbar-expand-lg.navbar-light.fixed-top {
+}
+.container-fluid .container .navbar.navbar-expand-lg.navbar-light.fixed-top {
+	background-color: #EEEEEE;
+}
