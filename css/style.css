@@ -97,3 +97,8 @@ html {
 .btn:hover {
   background-color: greenyellow;
 }
+.padd{
+	margin-top: auto;
+	padding-top: 130px;
+	text-align: center;
+}
