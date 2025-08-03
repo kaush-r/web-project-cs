@@ -147,7 +147,7 @@
     <h3>Just drop a Message</h3>
   </div>
 	
-  <form class="form-container" action="https://netmind.free.nf/index1.php" method="POST">
+  <form class="form-container" id="contactForm">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
@@ -160,6 +160,7 @@
       <label for="message">Message</label>
       <textarea class="form-control" id="message" name="message" placeholder="Enter your message here..." required></textarea>
     </div>
+	<div id="formResponse" class="my-3 text-center"></div>
     <div class="form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
       <label class="form-check-label" for="exampleCheck">Check me out</label>
