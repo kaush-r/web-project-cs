@@ -11,6 +11,11 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
 <body>
+	<?php if ($successMsg): ?>
+        <div class="message" style="color: green;"><?php echo $successMsg; ?></div>
+    <?php elseif ($errorMsg): ?>
+        <div class="message" style="color: red;"><?php echo $errorMsg; ?></div>
+    <?php endif; ?>
   	<div class="container-fluid">
   	  <div class="container">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top"> <a class="navbar-brand" href="#"><img src="images/technology.png" width="38" height="38" class="d-inline-block align-text-bottom"><span style="font-weight: bold; font-size: 1.4rem; color: #123456">NetMind</span><br>
