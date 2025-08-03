@@ -11,11 +11,6 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css">
   </head>
 <body>
-	<?php if ($successMsg): ?>
-        <div class="message" style="color: green;"><?php echo $successMsg; ?></div>
-    <?php elseif ($errorMsg): ?>
-        <div class="message" style="color: red;"><?php echo $errorMsg; ?></div>
-    <?php endif; ?>
   	<div class="container-fluid">
   	  <div class="container">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top"> <a class="navbar-brand" href="#"><img src="images/technology.png" width="38" height="38" class="d-inline-block align-text-bottom"><span style="font-weight: bold; font-size: 1.4rem; color: #123456">NetMind</span><br>
@@ -151,7 +146,12 @@
     <h1>Ready to connect with us?</h1>
     <h3>Just drop a Message</h3>
   </div>
-  <form class="form-container" action="https://netmind.free.nf/form.php" method="POST">
+  <?php if ($successMsg): ?>
+    <div class="message" style="color: green;"><?php echo $successMsg; ?></div>
+  <?php elseif ($errorMsg): ?>
+    <div class="message" style="color: red;"><?php echo $errorMsg; ?></div>
+  <?php endif; ?>
+  <form class="form-container" action="https://netmind.free.nf/index.php" method="POST">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
