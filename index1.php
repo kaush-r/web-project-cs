@@ -9,9 +9,6 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-$successMsg = '';
-$errorMsg = '';
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = $_POST['name'];
   $email = $_POST['email'];
@@ -35,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->Body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
 
     $mail->send();
-    $successMsg = "Message sent successfully!";
+    echo "Message sent successfully!";
   } catch (Exception $e) {
-    $errorMsg = "Mailer Error: {$mail->ErrorInfo}";
+    echo "Mailer Error: {$mail->ErrorInfo}";
   }
 }
 ?>

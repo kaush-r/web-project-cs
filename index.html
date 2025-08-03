@@ -146,12 +146,8 @@
     <h1>Ready to connect with us?</h1>
     <h3>Just drop a Message</h3>
   </div>
-  <?php if ($successMsg): ?>
-    <div class="message" style="color: green;"><?php echo $successMsg; ?></div>
-  <?php elseif ($errorMsg): ?>
-    <div class="message" style="color: red;"><?php echo $errorMsg; ?></div>
-  <?php endif; ?>
-  <form class="form-container" action="https://netmind.free.nf/index.php" method="POST">
+	
+  <form class="form-container" action="https://netmind.free.nf/index1.php" method="POST">
     <div class="form-group">
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
