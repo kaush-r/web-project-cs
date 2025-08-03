@@ -40,3 +40,60 @@ html {
 .container-fluid .container .navbar.navbar-expand-lg.navbar-light.fixed-top {
 	background-color: #EEEEEE;
 }
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px 20px;
+}
+
+.card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  background-color: white;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: green;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: green;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+	border-color: green;
+}
+
+.btn:hover {
+  background-color: greenyellow;
+}
