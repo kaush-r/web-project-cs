@@ -1,18 +1,37 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = htmlspecialchars($_POST["name"]);
-  $email = htmlspecialchars($_POST["email"]);
-  $message = htmlspecialchars($_POST["message"]);
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $message = $_POST['message'];
 
-  $to = "raveenonline7@gmail.com";  // <- replace with your Gmail
-  $subject = "New message from your website";
-  $body = "Name: $name\nEmail: $email\nMessage:\n$message";
-  $headers = "From: $email";
+  $mail = new PHPMailer(true);
+  try {
+    // SMTP settings
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'kaushrox36@gmail.com'; // Your Gmail
+    $mail->Password = 'zmnlfdapuhvnzjtd';   // App password from step 1
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
-  if (mail($to, $subject, $body, $headers)) {
+    // Email content
+    $mail->setFrom($email, $name);
+    $mail->addAddress('kaushrox36@gmail.com');  // Where you want to receive the mail
+    $mail->Subject = 'New message from your website';
+    $mail->Body = "Name: $name\nEmail: $email\n\nMessage:\n$message";
+
+    $mail->send();
     echo "Message sent successfully!";
-  } else {
-    echo "Error: Message could not be sent.";
+  } catch (Exception $e) {
+    echo "Mailer Error: {$mail->ErrorInfo}";
   }
 }
 ?>
