@@ -204,14 +204,49 @@
 </footer>
 
 
-<!-- body code goes here -->
+<script src="js/jquery-3.4.1.min.js"></script>
 
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/popper.min.js"></script> 
 	<script src="js/bootstrap-4.4.1.js"></script>
+
+  <script>
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault(); // prevent the default page reload
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const responseDiv = document.getElementById("formResponse");
+    const submitButton = document.getElementById("submit");
+
+    // Disable button and show loading text
+    submitButton.disabled = true;
+    responseDiv.innerHTML = '<span style="color: blue;">Sending...</span>';
+
+    // IMPORTANT: Make sure this URL is the correct URL for your PHP script on InfinityFree
+    fetch("https://netmind.free.nf/form.php", {
+      method: "POST",
+      body: formData,
+    })
+    .then(response => response.text().then(text => ({ ok: response.ok, status: response.status, text })))
+    .then(({ ok, status, text }) => {
+      if (ok) {
+        responseDiv.innerHTML = `<span style="color: green;">Message sent successfully!</span>`;
+        form.reset();
+      } else {
+        // Display a more helpful error message from the server
+        responseDiv.innerHTML = `<span style="color: red;">Error: ${text}</span>`;
+      }
+    })
+    .catch(err => {
+      // Handle network errors
+      responseDiv.innerHTML = `<span style="color: red;">Failed to send. Please check your network and try again.</span>`;
+      console.error(err);
+    })
+    .finally(() => {
+      // Re-enable the button
+      submitButton.disabled = false;
+    });
+  });
+  </script>
   </body>
 </html>
