@@ -1,5 +1,18 @@
 <?php
 
+// This is the line that gives your GitHub site permission.
+// IMPORTANT: Replace the URL with your actual GitHub Pages URL.
+header("Access-Control-Allow-Origin: https://your-github-username.github.io");
+
+// This allows the OPTIONS request method that browsers send first.
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
+// Exit for OPTIONS request.
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    exit(0);
+}
+
 if (function_exists('opcache_reset')) {
     opcache_reset();
 }
