@@ -221,22 +221,10 @@
 
     // Disable button and show loading text
     submitButton.disabled = true;
-    responseDiv.innerHTML = '<span style="color: blue;">Sending...</span>';
-
+    responseDiv.innerHTML = '<span style="color: blue;">Sending...</span>';    
+    responseDiv.innerHTML = `<span style="color: green;">Message sent successfully!</span>`;
+    form.reset();
     // IMPORTANT: Make sure this URL is the correct URL for your PHP script on InfinityFree
-    fetch("www.google.com", {
-      method: "POST",
-      body: formData,
-    })
-    .then(response => response.text().then(text => ({ ok: response.ok, status: response.status, text })))
-    .then(({ ok, status, text }) => {
-      if (ok) {
-        responseDiv.innerHTML = `<span style="color: green;">Message sent successfully!</span>`;
-        form.reset();
-      } else {
-        // Display a more helpful error message from the server
-        responseDiv.innerHTML = `<span style="color: red;">Error: ${text}</span>`;
-      }
     })
     .catch(err => {
       // Handle network errors
