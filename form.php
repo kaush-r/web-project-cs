@@ -2,7 +2,7 @@
 
 // This is the line that gives your GitHub site permission.
 // IMPORTANT: Replace the URL with your actual GitHub Pages URL.
-header("Access-Control-Allow-Origin: https://your-github-username.github.io");
+header("Access-Control-Allow-Origin: https://kaush-r.github.io");
 
 // This allows the OPTIONS request method that browsers send first.
 header("Access-Control-Allow-Methods: POST, OPTIONS");
